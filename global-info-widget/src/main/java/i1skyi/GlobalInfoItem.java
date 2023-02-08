@@ -1,8 +1,6 @@
 package i1skyi;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -16,6 +14,20 @@ public class GlobalInfoItem implements Serializable {
     protected String display_value;
     protected String decoration;
 
+    public GlobalInfoItem(String value, String name, String display_value) {
+        this.value = value;
+        this.name = name;
+        this.display_value = display_value;
+        this.decoration = "text";
+    }
+
+    public GlobalInfoItem(String value, String name) {
+        this.value = value;
+        this.name = name;
+        this.decoration = "text";
+        this.display_value = value;
+    }
+
     public GlobalInfoItem(String value, String name, String display_value, String decoration) {
         this.value = value;
         this.name = name;
@@ -23,7 +35,7 @@ public class GlobalInfoItem implements Serializable {
         this.decoration = decoration;
     }
 
-    public void setValues(String value) {
+    public void setValue(String value) {
         this.value = value;
     }
 
@@ -39,7 +51,7 @@ public class GlobalInfoItem implements Serializable {
         this.decoration = decoration;
     }
 
-    public String getValues() {
+    public String getValue() {
         return value;
     }
 

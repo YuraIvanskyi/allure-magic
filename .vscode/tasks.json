@@ -5,7 +5,6 @@
             "label": "$(jersey) allure",
             "command": "allure\\allure-2.21.0\\bin\\allure serve allure-results",
             "type": "shell",
-            "args": [],
             "presentation": {
                 "reveal": "always"
             },

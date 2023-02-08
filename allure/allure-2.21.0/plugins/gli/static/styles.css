@@ -1,0 +1,7 @@
+.widget.island {
+    border-radius: 5px;
+}
+
+.side-nav__link_active {
+    border-right: 4px solid green;
+}

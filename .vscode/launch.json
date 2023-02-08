@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch GlobalInfoWidget",
+            "request": "launch",
+            "mainClass": "i1skyi.GlobalInfoWidget",
+            "projectName": "global-info-widget"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

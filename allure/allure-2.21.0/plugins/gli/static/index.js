@@ -1,4 +1,4 @@
-class GlobalInfoWidget extends Backbone.Marionette.View {
+class GlobalInfoWidget extends Backbone.Marionette.CollectionView {
 
     template(data) {
         return widgetTemplate(data)
@@ -11,4 +11,4 @@ class GlobalInfoWidget extends Backbone.Marionette.View {
     }
 }
 
-allure.api.addWidget('global-info-widget', GlobalInfoWidget);
+allure.api.addWidget('widgets', 'global-info', GlobalInfoWidget);
