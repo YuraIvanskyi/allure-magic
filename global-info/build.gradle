@@ -13,5 +13,6 @@ description = 'Allure Global Info Plugin'
 dependencies {
     compileOnly('io.qameta.allure:allure-plugin-api:2.20.1')
 }
-artifacts.add("allurePlugin", tasks.distZip)
+
+// artifacts.add("allurePlugin", tasks.distZip)
 artifacts.add("archives", tasks.distZip)

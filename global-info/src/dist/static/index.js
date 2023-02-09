@@ -11,7 +11,4 @@ class GlobalInfoWidget extends Backbone.Marionette.View {
     }
 }
 
-allure.api.addWidget('widgets', 'global-info-widget', allure.components.WidgetStatusView.extend({
-    title: 'Global Warnings',
-    showLinks: true
-}));
+allure.api.addWidget('widgets', 'global-info', GlobalInfoWidget);

@@ -9,7 +9,7 @@
             "name": "Launch GlobalInfoWidget",
             "request": "launch",
             "mainClass": "i1skyi.GlobalInfoWidget",
-            "projectName": "global-info-widget"
+            "projectName": "global-info"
         },
         {
             "type": "java",

@@ -1,4 +1,4 @@
-id: global-info-widget
+id: global-info
 name: Global Warnings
 description: More detailed explanation of what global-info-widget plugin does.
 extensions:
