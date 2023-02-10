@@ -1,6 +1,5 @@
-
 const template = `
-<h2 class="widget__title"><%= title %></h2>
+<h2 class="widget__title">{{title}}</h2>
 {{#if items}}
 <div class="table  table_hover widget__table">
     {{#each items}}
@@ -17,13 +16,13 @@ const template = `
     {{/each}}
     {{#if overLimit}}
     <a class="{{b " table" "row" }} clickable environment-widget__expand">
-        <div class="{{b " table" "col" center=true}}">{{t 'widget.globalInfo.showAll'}}</div>
+        <div class="{{b " table" "col" center=true}}">{{widget.globalInfo.showAll}}</div>
     </a>
     {{/if}}
 </div>
 
 {{else}}
-<div class="widget__noitems">{{t 'widget.globalInfo.empty'}}</div>
+<div class="widget__noitems">{{widget.globalInfo.empty}}</div>
 {{/if}}
 `
 
@@ -39,11 +38,9 @@ allure.api.addTranslation('en', {
 
 allure.api.addWidget('widgets', 'global-info', Backbone.Marionette.View.extend({
     template(data) {
-        console.log(data);
-        console.log(this);
-        final = Backbone.Marionette.Renderer.render(template, data);
-        console.log(final);
-        return final
+        compiled = Handlebars.compile(template);
+        console.log(compiled(data));
+        return compiled(data)
     },
 
     // @on("click .environment-widget__expand")
