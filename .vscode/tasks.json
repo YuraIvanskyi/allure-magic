@@ -5,10 +5,21 @@
             "label": "$(jersey) allure",
             "command": "allure\\allure-2.21.0\\bin\\allure serve allure-results",
             "type": "shell",
-            "presentation": {
-                "reveal": "always"
+            "presentation": { // behaviour of process for this task
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
             },
-            "group": "build"
+            "options": { // display QoL feature, enabled by 'Tasks' Extension for VS Code
+                "statusbar": { // look at bottom-left corner & notice the button
+                    "color": "#fff",
+                    "tooltip": "Generates allure report out of recents tests tests/allure-reports folder & serves it",
+                    "label": "$(graph) Allure"
+                }
+            }
         }
     ]
 }

@@ -1,7 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
 .widget.island {
     border-radius: 5px;
 }
 
 .side-nav__link_active {
-    border-right: 4px solid rgb(65, 196, 65);
+    border-right: 4px solid #14a651;
+}
+
+.table__col {
+    line-height: 1em;
+}
+
+.test-result-overview__tags.pane__section {
+    margin: 8px 0;
 }

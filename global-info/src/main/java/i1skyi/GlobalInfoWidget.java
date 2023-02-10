@@ -64,7 +64,7 @@ public class GlobalInfoWidget extends CommonJsonAggregator implements Widget {
     @Override
     public Object getData(Configuration configuration, List<LaunchResults> launches) {
         GlobalInfoItem someObj = new GlobalInfoItem("test_value", "test_name", "test_dvalue", "test_dec");
-        GlobalInfoItem someObj2 = new GlobalInfoItem("test_value2", "test_name2", "test_dvalue2", "test_dec2");
+        GlobalInfoItem someObj2 = new GlobalInfoItem("https://github.com/YuraIvanskyi", "git", "My GitHub", "link");
         List<GlobalInfoItem> objList = new ArrayList<GlobalInfoItem>();
         objList.add(someObj);
         objList.add(someObj2);
