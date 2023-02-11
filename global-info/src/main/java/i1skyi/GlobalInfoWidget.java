@@ -3,6 +3,7 @@ package i1skyi;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -34,7 +35,7 @@ public class GlobalInfoWidget extends CommonJsonAggregator {
                 .flatMap(launch -> launch.getExtra(GLOBAL_INFO,
                         (Supplier<Map<String, String>>) LinkedHashMap::new).entrySet().stream())
                 .collect(toList());
-
+        System.out.println(Arrays.toString(warnings.toArray()));
         GlobalInfoItem someObj = new GlobalInfoItem("text_value", "test_name", "some text", "plain");
         GlobalInfoItem someObj2 = new GlobalInfoItem("https://github.com/YuraIvanskyi", "git", "My GitHub", "link");
         GlobalInfoItem someObj3 = new GlobalInfoItem("<code>let code = 'code'</code>", "raw_entry", "", "raw");
