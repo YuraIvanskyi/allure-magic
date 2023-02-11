@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -53,6 +55,14 @@ public class GlobalInfoWidget extends CommonJsonAggregator implements Reader {
         }
     }
 
+    public static <T> List<T> flatten(List<List<T>> listOfLists) {
+        return listOfLists.stream().reduce((x, y) -> {
+            List<T> list = new ArrayList<>(x);
+            list.addAll(y);
+            return list;
+        }).orElse(new ArrayList<>());
+    }
+
     @Override
     public List<GlobalInfoItem> getData(final List<LaunchResults> launches) {
         // final List<Map.Entry<String, String>> warnings = launches.stream()
@@ -73,12 +83,10 @@ public class GlobalInfoWidget extends CommonJsonAggregator implements Reader {
         // objList.add(someObj2);
         // objList.add(someObj3);
         // return objList;
-        List<GlobalInfoItem> all = launches.stream()
+        List<Object> all = launches.stream()
                 .map(launchResults -> launchResults.getExtra(GLOBAL_INFO))
                 .filter(Optional::isPresent)
                 .map(Optional::get)
-                .filter(GlobalInfoItem.class::isInstance)
-                .map(GlobalInfoItem.class::cast)
                 .collect(Collectors.toList());
         System.out.println(all);
         return launches.stream()
@@ -89,9 +97,4 @@ public class GlobalInfoWidget extends CommonJsonAggregator implements Reader {
                 .map(GlobalInfoItem.class::cast)
                 .collect(Collectors.toList());
     }
-
-    // public static void main(String[] args) {
-    // GlobalInfoItem globalInfoItem = new GlobalInfoItem("test", "test", "test",
-    // "test");
-    // }
 }

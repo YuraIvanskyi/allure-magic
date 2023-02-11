@@ -2,20 +2,17 @@ package i1skyi;
 
 import java.io.Serializable;
 
-import javax.annotation.processing.Generated;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.ALWAYS)
 @JsonPropertyOrder({
         "name",
         "value",
         "display_value",
         "decoration"
 })
-@Generated("jsonschema2pojo")
 public class GlobalInfoItem implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -33,21 +30,21 @@ public class GlobalInfoItem implements Serializable {
         super();
     }
 
-    public GlobalInfoItem(String value, String name, String display_value) {
+    public GlobalInfoItem(String name, String value, String display_value) {
         this.value = value;
         this.name = name;
         this.display_value = display_value;
         this.decoration = "text";
     }
 
-    public GlobalInfoItem(String value, String name) {
+    public GlobalInfoItem(String name, String value) {
         this.value = value;
         this.name = name;
         this.decoration = "text";
         this.display_value = value;
     }
 
-    public GlobalInfoItem(String value, String name, String display_value, String decoration) {
+    public GlobalInfoItem(String name, String value, String display_value, String decoration) {
         this.value = value;
         this.name = name;
         this.display_value = display_value;
@@ -56,7 +53,7 @@ public class GlobalInfoItem implements Serializable {
 
     @Override
     public String toString() {
-        return "GlobalInfoItem [value=" + value + ", name=" + name + ", display_value=" + display_value
-                + ", decoration=" + decoration + "]";
+        return "GlobalInfoItem (value=" + value + ", name=" + name + ", display_value=" + display_value
+                + ", decoration=" + decoration + ")";
     }
 }
