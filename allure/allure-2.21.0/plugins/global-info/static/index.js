@@ -1,11 +1,9 @@
 const template = `
 <h2 class="widget__title">{{ title }}
-{{#if items}}
 <span class="widget__subtitle">{{items.length}} items total</span>
-{{/if}}</h2>
-
-{{#if items}}
+</h2>
 <div class="table table_hover widget__table">
+{{#if items}}
     {{#each items}}
     <div class="table__row" disabled>
         <div class="table__col long-line shorter_col">
@@ -24,13 +22,18 @@ const template = `
     {{/each}}
     {{#if overLimit}}
     <a class="table__row clickable">
-        <div class="table__col center">{{ Show All }}</div>
+        <div class="table__col table__col_center"> Show All </div>
     </a>
     {{/if}}
-</div>
 {{else}}
-<div class="widget__noitems">{{ No messages }}</div>
+    <div class="table__row">
+        <div class="table__col table__col_center">
+            No messages, warnings or gloabl errors
+        </div>
+    </div>
 {{/if}}
+</div>
+
 `
 
 class GlobalInfoWidget extends Backbone.Marionette.View {

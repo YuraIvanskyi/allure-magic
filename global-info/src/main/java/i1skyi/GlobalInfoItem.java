@@ -2,17 +2,36 @@ package i1skyi;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import javax.annotation.processing.Generated;
 
-@JsonSerialize
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+        "name",
+        "value",
+        "display_value",
+        "decoration"
+})
+@Generated("jsonschema2pojo")
 public class GlobalInfoItem implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @JsonProperty("value")
     protected String value;
+    @JsonProperty("name")
     protected String name;
+    @JsonProperty("display_value")
     protected String display_value;
+    @JsonProperty("decoration")
     protected String decoration;
+
+    public GlobalInfoItem() {
+        super();
+    }
 
     public GlobalInfoItem(String value, String name, String display_value) {
         this.value = value;
@@ -35,36 +54,9 @@ public class GlobalInfoItem implements Serializable {
         this.decoration = decoration;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    @Override
+    public String toString() {
+        return "GlobalInfoItem [value=" + value + ", name=" + name + ", display_value=" + display_value
+                + ", decoration=" + decoration + "]";
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDisplay_value(String display_value) {
-        this.display_value = display_value;
-    }
-
-    public void setDecoration(String decoration) {
-        this.decoration = decoration;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDisplay_value() {
-        return display_value;
-    }
-
-    public String getDecoration() {
-        return decoration;
-    }
-
 }
