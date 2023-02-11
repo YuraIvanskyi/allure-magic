@@ -10,12 +10,10 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 import io.qameta.allure.CommonJsonAggregator;
-import io.qameta.allure.Widget;
 import io.qameta.allure.Constants;
-import io.qameta.allure.core.Configuration;
 import io.qameta.allure.core.LaunchResults;
 
-public class GlobalInfoWidget extends CommonJsonAggregator implements Widget {
+public class GlobalInfoWidget extends CommonJsonAggregator {
     public static final String GLOBAL_INFO = "global-info";
 
     public GlobalInfoWidget(String location, String fileName) {
@@ -37,11 +35,13 @@ public class GlobalInfoWidget extends CommonJsonAggregator implements Widget {
                         (Supplier<Map<String, String>>) LinkedHashMap::new).entrySet().stream())
                 .collect(toList());
 
-        GlobalInfoItem someObj = new GlobalInfoItem("test_value", "test_name", "test_dvalue", "test_dec");
-        GlobalInfoItem someObj2 = new GlobalInfoItem("test_value2", "test_name2", "test_dvalue2", "test_dec2");
+        GlobalInfoItem someObj = new GlobalInfoItem("text_value", "test_name", "some text", "plain");
+        GlobalInfoItem someObj2 = new GlobalInfoItem("https://github.com/YuraIvanskyi", "git", "My GitHub", "link");
+        GlobalInfoItem someObj3 = new GlobalInfoItem("<code>let code = 'code'</code>", "raw_entry", "", "raw");
         List<GlobalInfoItem> objList = new ArrayList<GlobalInfoItem>();
         objList.add(someObj);
         objList.add(someObj2);
+        objList.add(someObj3);
         return objList;
         // warnings.stream()
         // .collect(groupingBy(Map.Entry::getKey, LinkedHashMap::new,
@@ -51,24 +51,9 @@ public class GlobalInfoWidget extends CommonJsonAggregator implements Widget {
         // .collect(toList());
     }
 
-    @Override
-    public String getName() {
-        return "mywidget";
-    }
-
     private static GlobalInfoItem aggregateItem(final HashMap<String, String> entry) {
         return new GlobalInfoItem(entry.get("values"), entry.get("name"), entry.get("display_name"),
                 entry.get("decoration"));
-    }
-
-    @Override
-    public Object getData(Configuration configuration, List<LaunchResults> launches) {
-        GlobalInfoItem someObj = new GlobalInfoItem("test_value", "test_name", "test_dvalue", "test_dec");
-        GlobalInfoItem someObj2 = new GlobalInfoItem("https://github.com/YuraIvanskyi", "git", "My GitHub", "link");
-        List<GlobalInfoItem> objList = new ArrayList<GlobalInfoItem>();
-        objList.add(someObj);
-        objList.add(someObj2);
-        return objList;
     }
 
     // public static void main(String[] args) {

@@ -1,19 +1,19 @@
 const template = `
-<h2 class="widget__title">❗{{ title }}
+<h2 class="widget__title">{{ title }}
 {{#if items}}
 <span class="widget__subtitle">{{items.length}} items total</span>
 {{/if}}</h2>
 
 {{#if items}}
-<div class="table  table_hover widget__table">
+<div class="table table_hover widget__table">
     {{#each items}}
     <div class="table__row" disabled>
-        <div class="table__col long-line">
+        <div class="table__col long-line shorter_col">
             {{name}}
         </div>
         {{#if display_value}}
         <div class="table__col long-line">
-            <a href="{{value}}">{{display_value}}</a>
+            <a class="link" href="{{value}}">{{display_value}}</a>
         </div>
         {{else}}
         <div class="table__col long-line">
@@ -45,7 +45,7 @@ class GlobalInfoWidget extends Backbone.Marionette.View {
         return {
             items: items.slice(0, this.listLimit),
             overLimit: items.length > this.listLimit,
-            title: 'Warnings & Info'
+            title: 'QA Info & Warnings'
         };
     }
 }
