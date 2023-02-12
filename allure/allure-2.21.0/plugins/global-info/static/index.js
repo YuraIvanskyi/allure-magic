@@ -36,7 +36,47 @@ const template = `
 
 `
 
+class WidgetTemplate {
+
+    constructor(data) {
+        this.content = data
+        this.template = ``
+    }
+
+    build() {
+        return this.template.concat(
+            this.title(this.content.title),
+            this.bodyTable()
+        )
+    }
+
+    bodyTable = (innerHtml) => `<div class="table table_hover widget__table">${innerHtml}</div >`
+    entryBase = (entryHtml) => `<div class="table__row" disabled>${entryHtml}</div>`
+    optional = (value) => `${value}` ? value : ``
+    entryMore = (showMoreText) => `
+        <a class="table__row clickable">
+            <div class="table__col table__col_center">
+            ${showMoreText}
+            </div>
+        </a>`
+    entryNoValues = (noContentText) => `
+        <div class="table__row">
+            <div class="table__col table__col_center">
+                ${noContentText}
+            </div>
+        </div>`
+    entryName = (name) => `<div class="table__col long-line shorter_col">${name}</div>`
+    entryValue = (value) => `<div class="table__col long-line shorter_col">${value}</div>`
+    title = (title, subtitle) =>
+        `<h2 class="widget__title" >${title}<span class="widget__subtitle">${subtitle}</span></h2>`
+            ? subtitle
+            : `<h2 class="widget__title" >${title}</h2>`
+    linkEntryValue = (text, link) => `<a class="link" href="${link}">${text}</a>`
+    codeEntryValue = (value) => `<pre class="code"><code>${value}<code></pre>`
+}
+
 class GlobalInfoWidget extends Backbone.Marionette.View {
+
     template(data) {
         return Handlebars.compile(template)(data)
     }
