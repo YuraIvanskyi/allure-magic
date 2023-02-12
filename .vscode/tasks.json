@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "$(jersey) allure",
+            "label": "$(graph) allure",
             "command": "allure\\allure-2.21.0\\bin\\allure serve allure-results",
             "type": "shell",
             "presentation": { // behaviour of process for this task
