@@ -5,7 +5,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-
 code {
     font-family: 'Source Code Pro', monospace;
 }
@@ -19,16 +18,8 @@ pre {
 
 }
 
-.side-nav__link_active {
-    border-right: 4px solid #14a651;
-}
-
 .table__col {
     line-height: 1em;
-}
-
-.shorter_col {
-    max-width: 25%;
 }
 
 .test-result-overview__tags.pane__section {
