@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "$(graph) allure",
+            "command": "allure\\allure-2.21.0\\bin\\allure serve allure-results",
+            "type": "shell",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "options": { // display QoL feature, enabled by 'Tasks' Extension for VS Code
+                "statusbar": { // look at bottom-left corner & notice the button
+                    "color": "#fff",
+                    "tooltip": "Generates allure report out of recents tests tests/allure-reports folder & serves it",
+                    "label": "$(graph) Allure"
+                }
+            }
+        }
+    ]
+}

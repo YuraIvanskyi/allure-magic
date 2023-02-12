@@ -1,0 +1,9 @@
+id: global-info
+name: Global Warnings
+description: More detailed explanation of what global-info-widget plugin does.
+extensions:
+- i1skyi.GlobalInfoWidget
+jsFiles:
+- index.js
+cssFiles:
+- styles.css

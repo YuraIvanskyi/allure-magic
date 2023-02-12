@@ -1,0 +1,5 @@
+id: restyle
+name: Some touches to make report more fresh
+description: Nothing more than some touches to make report more fresh
+cssFiles:
+- styles.css
