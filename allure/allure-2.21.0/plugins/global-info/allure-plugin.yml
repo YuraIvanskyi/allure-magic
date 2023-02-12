@@ -4,7 +4,6 @@ description: More detailed explanation of what global-info-widget plugin does.
 extensions:
 - i1skyi.GlobalInfoWidget
 jsFiles:
-- handlebars.min-v4.7.7.js
 - index.js
 cssFiles:
 - styles.css
