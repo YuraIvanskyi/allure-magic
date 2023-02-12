@@ -6,6 +6,7 @@ def test_magic():
     assert 1 == 1
     magic_step()
     magic_step()
+    allure.attach(body="adsadasdasdadad")
 
 
 @allure.title("Magic evil test")
@@ -14,6 +15,14 @@ def test_magic_evil():
     magic_step()
     magic_step()
     assert 1 == 2
+
+
+@allure.title("Magic broken test")
+def test_magic_broken():
+    assert 1 == 1
+    magic_step()
+    magic_step()
+    assert 1 == 2 / 0
 
 
 @allure.step("Magic step")

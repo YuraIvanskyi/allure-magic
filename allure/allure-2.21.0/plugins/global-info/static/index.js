@@ -74,7 +74,10 @@ class WidgetTemplate {
         </div>`
     entryName = (name) => `<div class="table__col long-line shorter_col">${name}</div>`
     entryValue = (value) => `<div class="table__col long-line">${value}</div>`
-    linkEntryValue = (text, link) => `<div class="table__col long-line"><a class="link" href="${link}">${text}</a></div>`
+    linkEntryValue = (text, link) => `
+        <div class="table__col long-line">
+            <a class="link" href="${link}">${text} <i class="fa fa-external-link" aria-hidden="true"></i></a>
+        </div>`
     codeEntryValue = (value) => `<div class="table__col long-line"><pre class="code"><code>${value}</code></pre></div>`
 }
 
