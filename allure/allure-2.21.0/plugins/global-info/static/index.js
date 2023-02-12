@@ -5,51 +5,52 @@ class WidgetTemplate {
         this.template = ``;
     }
 
-
-    build() {
+    buildEntries() {
+        entries = ``
         for (const entry of this.content.items) {
             switch (entry.decoration) {
                 case 'link':
-                    this.template +=
-                        this.entryBase(
-                            this.stack(
-                                this.entryName(entry.name),
-                                this.linkEntryValue(entry.display_value, entry.value)
-                            )
-                        );
+                    entries += this.entryBase(
+                        this.stack(
+                            this.entryName(entry.name),
+                            this.linkEntryValue(entry.display_value, entry.value)
+                        )
+                    );
                     break;
                 case 'code':
-                    this.template +=
-                        this.entryBase(
-                            this.stack(
-                                this.entryName(entry.name),
-                                this.codeEntryValue(entry.value)
-                            )
-                        );
+                    entries += this.entryBase(
+                        this.stack(
+                            this.entryName(entry.name),
+                            this.codeEntryValue(entry.value)
+                        )
+                    );
                     break;
                 default:
-                    this.template +=
-                        this.entryBase(
-                            this.stack(
-                                this.entryName(entry.name),
-                                this.entryValue(entry.value)
-                            )
-                        );
+                    entries += this.entryBase(
+                        this.stack(
+                            this.entryName(entry.name),
+                            this.entryValue(entry.value)
+                        )
+                    );
             }
-
         }
+        return entries;
 
+    }
+
+    build() {
         return this.stack(
             this.title(this.content.title, this.content.subtitle),
             this.bodyTable(
                 this.optional(
-                    this.template,
+                    this.buildEntries(),
                     this.entryNoValues('No messages, warnings or gloabl errors'),
                     this.content.items
                 )
             ),
         )
     }
+
     stack = (...args) => args.join('')
     optional = (value, alternative, condition = true) => condition ? value : alternative
     bodyTable = (innerHtml) => `<div class="table table_hover widget__table">${innerHtml}</div >`
