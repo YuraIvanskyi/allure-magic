@@ -2,11 +2,10 @@ class WidgetTemplate {
 
     constructor(data) {
         this.content = data;
-        this.template = ``;
     }
 
     buildEntries() {
-        entries = ``
+        let entries = ``
         for (const entry of this.content.items) {
             switch (entry.decoration) {
                 case 'link':
@@ -34,6 +33,9 @@ class WidgetTemplate {
                     );
             }
         }
+        if (this.content.overLimit) {
+            entries += this.entryMore(this.content.showAll);
+        }
         return entries;
 
     }
@@ -60,7 +62,7 @@ class WidgetTemplate {
     entryBase = (entryHtml) => `<div class="table__row" disabled>${entryHtml}</div>`
     entryMore = (showMoreText) => `
         <a class="table__row clickable">
-            <div class="table__col table__col_center">
+            <div class="table__col table__col_center globalinfo-widget__expand">
             ${showMoreText}
             </div>
         </a>`
@@ -71,18 +73,27 @@ class WidgetTemplate {
             </div>
         </div>`
     entryName = (name) => `<div class="table__col long-line shorter_col">${name}</div>`
-    entryValue = (value) => `<div class="table__col long-line shorter_col">${value}</div>`
-    linkEntryValue = (text, link) => `<a class="link" href="${link}">${text}</a>`
-    codeEntryValue = (value) => `<pre class="code"><code>${value}<code></pre>`
+    entryValue = (value) => `<div class="table__col long-line">${value}</div>`
+    linkEntryValue = (text, link) => `<div class="table__col long-line"><a class="link" href="${link}">${text}</a></div>`
+    codeEntryValue = (value) => `<div class="table__col long-line"><pre class="code"><code>${value}</code></pre></div>`
 }
 
 class GlobalInfoWidget extends Backbone.Marionette.View {
-
+    events() {
+        return { "click .globalinfo-widget__expand": "onExpandClick" }
+    }
     template(data) {
         return new WidgetTemplate(data).build();
     }
+    render() {
+        super.render();
+    }
     initialize() {
-        this.listLimit = 10;
+        this.listLimit = 3;
+    }
+    onExpandClick() {
+        this.listLimit = this.model.get("items").length;
+        this.render();
     }
     serializeData() {
         const items = this.model.get("items");
@@ -90,17 +101,9 @@ class GlobalInfoWidget extends Backbone.Marionette.View {
             items: items.slice(0, this.listLimit),
             overLimit: items.length > this.listLimit,
             title: 'QA Info & Warnings',
+            showAll: 'Show All',
             subtitle: `${items.length} items total`
         };
     }
 }
 allure.api.addWidget('widgets', 'global-info', GlobalInfoWidget);
-allure.api.addTranslation('en', {
-    widget: {
-        globalInfo: {
-            name: 'Global Info',
-            showAll: 'Show All',
-            empty: 'Empty'
-        }
-    }
-});
