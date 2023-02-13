@@ -47,7 +47,7 @@ class WidgetTemplate {
                 this.optional(
                     this.buildEntries(),
                     this.entryNoValues('No messages, warnings or gloabl errors'),
-                    this.content.items
+                    this.content.items.length
                 )
             ),
         )
