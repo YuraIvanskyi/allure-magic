@@ -33,3 +33,22 @@ pre {
 .pane__section {
     margin: 8px 0;
 }
+
+.status-toggle__item {
+    display: inline-flex;
+}
+
+.y-label,
+.n-label {
+    min-width: 21px;
+    text-align: center;
+}
+
+.status-details__expanded>.status-details__content {
+    display: block;
+    border-bottom: 1px solid #000;
+}
+
+.status-details__trace {
+    border-top: none;
+}
