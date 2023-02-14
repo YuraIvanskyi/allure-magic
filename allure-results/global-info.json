@@ -1,0 +1,28 @@
+[
+    {
+        "name": "My GitHub Link",
+        "value": "https://github.com/YuraIvanskyi",
+        "display_value": "Yura Ivanskyi",
+        "decoration": "link"
+    },
+    {
+        "name": "Code",
+        "value": "@allure.title('Magic good test')\n@allure.description('This is a test')",
+        "decoration": "code"
+    },
+    {
+        "name": "something",
+        "value": "And it's value"
+    },
+    {
+        "name": "something raw",
+        "value": "<b style=\"red\">Something in raw html</b>"
+    },
+    {
+        "name": "Even tables",
+        "value": "<table border=\"1\"><tbody><tr><td>even&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>table&nbsp;</td></tr></tbody></table>"
+    },
+    {
+        "name": "smth without value"
+    }
+]
