@@ -7,6 +7,7 @@ body {
 
 code {
     font-family: 'Source Code Pro', monospace;
+    line-height: 1em;
 }
 
 pre {
@@ -20,6 +21,11 @@ pre {
 
 .widget__title {
     font-weight: normal;
+}
+
+.side-nav__collapse_active,
+.side-nav__link_active {
+    border-right: 4px solid #ff8636;
 }
 
 .table__col {
