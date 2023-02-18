@@ -4,3 +4,6 @@
 *.py[cod]
 *.pyc
 *.zip
+*-result.json
+*-container.json
+*.attach

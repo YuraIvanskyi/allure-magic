@@ -51,6 +51,14 @@ pre {
     margin: 8px 0;
 }
 
+.step__title {
+    padding: 6px 25px 6px 25px;
+}
+
+.step__status {
+    left: 4px;
+}
+
 .pane__section {
     margin: 8px 0;
 }
