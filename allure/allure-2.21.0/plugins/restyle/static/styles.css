@@ -1,26 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-body {
+body,
+html {
     font-family: 'Figtree', sans-serif;
+    font-size: 16px;
 }
 
 code {
     font-family: 'Source Code Pro', monospace;
     line-height: 1em;
+    font-size: 0.9em;
 }
 
 pre {
     margin: 0;
 }
 
+.link>pre {
+    margin-bottom: 6px;
+}
+
 .widget.island {
-    border-radius: 5px;
+    border-radius: 6px;
 
 }
 
 .widget__title {
     font-weight: normal;
+}
+
+.side-nav__item {
+    font-size: 1em;
 }
 
 .side-nav__collapse_active,
@@ -30,6 +41,10 @@ pre {
 
 .table__col {
     line-height: 1em;
+}
+
+.test-result__content {
+    margin-bottom: 0;
 }
 
 .test-result-overview__tags.pane__section {
@@ -52,7 +67,7 @@ pre {
 
 .status-details__expanded>.status-details__content {
     display: block;
-    border-bottom: 1px solid #000;
+    border-bottom: 2px solid #1d1d1d;
 }
 
 .status-details__trace {
