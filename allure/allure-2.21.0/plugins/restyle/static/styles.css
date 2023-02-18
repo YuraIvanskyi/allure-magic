@@ -67,6 +67,10 @@ pre {
     display: inline-flex;
 }
 
+.parameters-table__cell {
+    padding: 0px;
+}
+
 .y-label,
 .n-label {
     min-width: 21px;
