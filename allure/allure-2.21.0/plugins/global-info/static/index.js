@@ -92,7 +92,7 @@ class GlobalInfoWidget extends Backbone.Marionette.View {
         super.render();
     }
     initialize() {
-        this.listLimit = 3;
+        this.listLimit = 5;
     }
     onExpandClick() {
         this.listLimit = this.model.get("items").length;
