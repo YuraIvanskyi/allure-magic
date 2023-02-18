@@ -47,7 +47,7 @@ class WidgetTemplate {
                 this.optional(
                     this.buildEntries(),
                     this.entryNoValues('No messages, warnings or gloabl errors'),
-                    this.content.items
+                    this.content.items.length
                 )
             ),
         )
@@ -92,7 +92,7 @@ class GlobalInfoWidget extends Backbone.Marionette.View {
         super.render();
     }
     initialize() {
-        this.listLimit = 3;
+        this.listLimit = 5;
     }
     onExpandClick() {
         this.listLimit = this.model.get("items").length;
