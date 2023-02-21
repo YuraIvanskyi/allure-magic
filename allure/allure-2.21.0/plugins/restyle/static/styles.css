@@ -4,7 +4,7 @@
 body,
 html {
     font-family: 'Figtree', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 code {
@@ -67,6 +67,10 @@ pre {
     display: inline-flex;
 }
 
+.parameters-table__cell {
+    padding: 0px;
+}
+
 .y-label,
 .n-label {
     min-width: 21px;
@@ -80,4 +84,19 @@ pre {
 
 .status-details__trace {
     border-top: none;
+}
+
+.node__leaf .node__title {
+    padding: 6px 16px 20px 35px;
+}
+
+.node__parameters {
+    padding: 0px;
+    position: absolute;
+    bottom: 0;
+}
+
+.label__info {
+    letter-spacing: 0;
+    font-size: 70%;
 }

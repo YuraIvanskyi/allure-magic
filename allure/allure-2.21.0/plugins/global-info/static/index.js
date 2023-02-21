@@ -46,7 +46,7 @@ class WidgetTemplate {
             this.bodyTable(
                 this.optional(
                     this.buildEntries(),
-                    this.entryNoValues('No messages, warnings or gloabl errors'),
+                    this.entryNoValues('No messages, warnings or global errors'),
                     this.content.items.length
                 )
             ),
