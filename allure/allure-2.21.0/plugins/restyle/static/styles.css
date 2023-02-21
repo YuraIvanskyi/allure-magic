@@ -95,3 +95,8 @@ pre {
     position: absolute;
     bottom: 0;
 }
+
+.label__info {
+    letter-spacing: 0;
+    font-size: 70%;
+}
