@@ -85,3 +85,13 @@ pre {
 .status-details__trace {
     border-top: none;
 }
+
+.node__leaf .node__title {
+    padding: 6px 16px 20px 35px;
+}
+
+.node__parameters {
+    padding: 0px;
+    position: absolute;
+    bottom: 0;
+}
