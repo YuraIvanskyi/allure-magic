@@ -103,3 +103,7 @@ pre {
     letter-spacing: 0;
     font-size: 70%;
 }
+
+.bar {
+    border-radius: 6px;
+}
