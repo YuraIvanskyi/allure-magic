@@ -4,7 +4,7 @@
 body,
 html {
     font-family: 'Figtree', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 code {
@@ -23,11 +23,13 @@ pre {
 
 .widget.island {
     border-radius: 6px;
+    padding: 10px 16px 0;
 
 }
 
 .widget__title {
     font-weight: normal;
+    margin-bottom: 10px;
 }
 
 .side-nav__item {
@@ -41,6 +43,7 @@ pre {
 
 .table__col {
     line-height: 1em;
+    padding: 8px 10px;
 }
 
 .test-result__content {
