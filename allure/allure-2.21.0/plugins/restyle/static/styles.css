@@ -115,3 +115,7 @@ pre.status-details__trace code {
 .bar {
     border-radius: 6px;
 }
+
+.search__input {
+    border-radius: 6px;
+}
