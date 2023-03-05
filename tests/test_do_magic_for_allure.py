@@ -1,9 +1,10 @@
-import allure
+import allure, pytest
 
 
+@pytest.mark.parametrize("test_input,expected", [(1, 1), (1, 2), (1, 1)])
 @allure.title("Magic good test")
-def test_magic():
-    assert 1 == 1
+def test_magic(test_input, expected):
+    assert test_input == expected
     magic_step()
     magic_step()
     allure.attach(body="adsadasdasdadad")
@@ -18,7 +19,7 @@ def test_magic_evil():
 
 
 @allure.title("Magic broken test")
-def test_magic_broken():
+def test_magic_broken(info):
     assert 1 == 1
     magic_step()
     magic_step()
