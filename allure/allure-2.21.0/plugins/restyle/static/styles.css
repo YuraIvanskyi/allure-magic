@@ -47,6 +47,7 @@ pre.status-details__trace code {
 
 .table__col {
     line-height: 1em;
+    align-self: baseline;
     padding: 8px 10px;
 }
 
