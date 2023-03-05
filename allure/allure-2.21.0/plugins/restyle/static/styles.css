@@ -17,6 +17,10 @@ pre {
     margin: 0;
 }
 
+pre.status-details__trace code {
+    white-space: pre-wrap;
+}
+
 .link>pre {
     margin-bottom: 6px;
 }
@@ -90,7 +94,11 @@ pre {
 }
 
 .node__leaf .node__title {
-    padding: 6px 16px 20px 35px;
+    padding: 6px 14px 6px 32px;
+}
+
+.node__leaf .node__title:has(div.node__parameters) {
+    padding: 6px 14px 14px 32px;
 }
 
 .node__parameters {
