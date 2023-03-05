@@ -4,7 +4,7 @@
 body,
 html {
     font-family: 'Figtree', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 code {
@@ -17,17 +17,23 @@ pre {
     margin: 0;
 }
 
+pre.status-details__trace code {
+    white-space: pre-wrap;
+}
+
 .link>pre {
     margin-bottom: 6px;
 }
 
 .widget.island {
     border-radius: 6px;
+    padding: 10px 16px 0;
 
 }
 
 .widget__title {
     font-weight: normal;
+    margin-bottom: 10px;
 }
 
 .side-nav__item {
@@ -41,6 +47,8 @@ pre {
 
 .table__col {
     line-height: 1em;
+    align-self: baseline;
+    padding: 8px 10px;
 }
 
 .test-result__content {
@@ -87,7 +95,11 @@ pre {
 }
 
 .node__leaf .node__title {
-    padding: 6px 16px 20px 35px;
+    padding: 6px 14px 6px 32px;
+}
+
+.node__leaf .node__title:has(div.node__parameters) {
+    padding: 6px 14px 14px 32px;
 }
 
 .node__parameters {
@@ -99,4 +111,12 @@ pre {
 .label__info {
     letter-spacing: 0;
     font-size: 70%;
+}
+
+.bar {
+    border-radius: 6px;
+}
+
+.search__input {
+    border-radius: 6px;
 }

@@ -23,3 +23,8 @@ def fixture3():
 def fixture4():
     yield
     print(1)
+
+
+@pytest.fixture()
+def info():
+    return 1
